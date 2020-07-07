@@ -1,0 +1,110 @@
+{"0": {
+    "doc": "Frequently Asked Questions",
+    "title": "FAQs",
+    "content": ". | If I flash this firmware, will I be able to revert to the original Anne Pro firmware later? | . Yes. We use the original Anne Pro 2’s bootloader to load our firmware, so reverting is as easy as puting the keyboard into IAP mode and do an firmware update with ObinsKit. (Note: we have noticed ObinsKit might have trouble restoring when under macOS. But had great success with Windows.) . ",
+    "url": "https://openannepro.github.io/faq/#faqs",
+    "relUrl": "/faq/#faqs"
+  },"1": {
+    "doc": "Frequently Asked Questions",
+    "title": "Frequently Asked Questions",
+    "content": " ",
+    "url": "https://openannepro.github.io/faq/",
+    "relUrl": "/faq/"
+  },"2": {
+    "doc": "Home",
+    "title": "Open Anne Pro",
+    "content": "This is an alternative firmware for the Anne Pro 2 Keyboard. This is for the Anne Pro 2 keyboard, for the Anne Pro 1, please refer to the anne-key project. ",
+    "url": "https://openannepro.github.io/#open-anne-pro",
+    "relUrl": "/#open-anne-pro"
+  },"3": {
+    "doc": "Home",
+    "title": "Why Custom Firmware",
+    "content": "From my short and limited exprience with the original firmware provided by ObinsLab, I find it to be extremely buggy. One of the most significant problem being compatibility in BIOS. Aside from buggy, I would also like to switch the “Magic FN” from caps lock to other keys. ",
+    "url": "https://openannepro.github.io/#why-custom-firmware",
+    "relUrl": "/#why-custom-firmware"
+  },"4": {
+    "doc": "Home",
+    "title": "Status",
+    "content": "This project is still under heavy development and in its early stages. I would recommend to always have a backup keyboard if you are going to participate in the project. (i.e. if something arises you still have a second way to input keystrokes for long enough that you can either restore to the Obins firmware or find a solution). ",
+    "url": "https://openannepro.github.io/#status",
+    "relUrl": "/#status"
+  },"5": {
+    "doc": "Home",
+    "title": "QMK",
+    "content": "QMK is a powerful open-source keyboard firmware that are being used by many open-source keyboards that are on the market today. Most famous for it’s apparence in the Plunk, and ergodox-ez keyboards. Currently we have a fully functional port of the QMK firmware for both the c15 and c18 revision. (If you are unsure which one you have, read below) This includes key matrix function, which is the “most important” part of a keyboard I would say. ",
+    "url": "https://openannepro.github.io/#qmk",
+    "relUrl": "/#qmk"
+  },"6": {
+    "doc": "Home",
+    "title": "AnnePro2-Shine",
+    "content": "Shine is the custom firmware designed to run on the LED micro-controller of the keyboard to control lighting effects. In Obins’ words, this is the Light processor. Currently this project is in its infancy, only very basic features has been tested. It can act as a decent indicator light (e.g. Caps Lock) using the RGB leds. But there is a lot of potential out there, as the firmware is only about 5KB in size right now, and the microcontroller can hold 64/128 KB of code for the c15/c18 revision respectively. ",
+    "url": "https://openannepro.github.io/#annepro2-shine",
+    "relUrl": "/#annepro2-shine"
+  },"7": {
+    "doc": "Home",
+    "title": "Bluetooth",
+    "content": "As of July 6, 2020, we have not yet reversed the Obins bluetooth firmware nor started writing our own. However, if you are interested, feel free to kick start this project. ",
+    "url": "https://openannepro.github.io/#bluetooth",
+    "relUrl": "/#bluetooth"
+  },"8": {
+    "doc": "Home",
+    "title": "Home",
+    "content": " ",
+    "url": "https://openannepro.github.io/",
+    "relUrl": "/"
+  },"9": {
+    "doc": "How to Install",
+    "title": "Install Instructions",
+    "content": "** WARNING: these instructions are by no means complete, feel free to ask in the Discord Server if you encounter any problems. As we are still in early test stages.** . ",
+    "url": "https://openannepro.github.io/install/#install-instructions",
+    "relUrl": "/install/#install-instructions"
+  },"10": {
+    "doc": "How to Install",
+    "title": "Get AnnePro2 Tools",
+    "content": ". | Install the latest stable rust toolchain using rustup | Download or Clone the AnnePro2-Tools project. | Compile the tool using cargo build --release . | The compiled tool should be in ./target/release/annepro2_tools (In later I will refer to this as annepro2_tools) | . ",
+    "url": "https://openannepro.github.io/install/#get-annepro2-tools",
+    "relUrl": "/install/#get-annepro2-tools"
+  },"11": {
+    "doc": "How to Install",
+    "title": "Get QMK firmware",
+    "content": "Hint: If you are on windows, I recommend completing this step using WSL. YMMV . | Clone our fork of the QMK firmware by using the command below. (Install Git if needed) git clone https://github.com/OpenAnnePro/qmk_firmware.git annepro-qmk --recursive --depth 1 . | Obtain the gcc-arm-none-eabi toolchain so you can build the project. | To compile the firmware type # For C15 Revision make annepro2/c15 # For C18 Revision make annepro2/c18 . This should compelte without any error. And you should be able to see a file named annepro2_c15(18)_default.bin in your directory. | . ",
+    "url": "https://openannepro.github.io/install/#get-qmk-firmware",
+    "relUrl": "/install/#get-qmk-firmware"
+  },"12": {
+    "doc": "How to Install",
+    "title": "Flashing the firmware",
+    "content": ". | Put the keyboard into DFU/IAP mode. | Run anndpro2_tools with the firmware you just built. Please subsitute with correct path annepro2_tools annepro2_c15_default.bin . If you have the C18 revision, you will need to add -p 8009 to the argument list in order to specify 0x8009 as the USB product ID. If this reports can’t find device please double check you have the keyboard in IAP mode. We have found out some version of the bootloader only show one interface, which require the use of --loosy argument to use the first interface found on the device with 0x04d9:8009 vid pid pair. | . Once the tool has completed, you can simply replug the keyboard to activate the firmware. Enjoy! . ",
+    "url": "https://openannepro.github.io/install/#flashing-the-firmware",
+    "relUrl": "/install/#flashing-the-firmware"
+  },"13": {
+    "doc": "How to Install",
+    "title": "How to Install",
+    "content": " ",
+    "url": "https://openannepro.github.io/install/",
+    "relUrl": "/install/"
+  },"14": {
+    "doc": "HW Revision and Variations",
+    "title": "C15 vs C18 Hardware Revision",
+    "content": " ",
+    "url": "https://openannepro.github.io/ap2_revisions/#c15-vs-c18-hardware-revision",
+    "relUrl": "/ap2_revisions/#c15-vs-c18-hardware-revision"
+  },"15": {
+    "doc": "HW Revision and Variations",
+    "title": "What’s different",
+    "content": "The key differences are the microcontrolleres used. In the C15 revision, two HT32F52342, LQFP48 are used for the matrix and led controllers; however, in the C18 revision they used two HT32F52352, LQFP64. These two are very close in software perspective, but the pin mapping is slightly different. For details of the micro controller themselves, please refer to Holtek’s documentation. But in summary, the HT32F52352 comes with 128K flash and 16K ram, where the HT32F52342 comes with only 64K flash and 8K ram. ",
+    "url": "https://openannepro.github.io/ap2_revisions/#whats-different",
+    "relUrl": "/ap2_revisions/#whats-different"
+  },"16": {
+    "doc": "HW Revision and Variations",
+    "title": "How do I tell?",
+    "content": "There are various indicators as of which revision is which. Case . Flipping you keyboard over, C15 version seems to have “obinslab” engraved in the circle where as C18 has “Anne Pro”. USB ID . If you happen to have an Linux / macOS, you can identify this easily by using lsusb or system info. When the keyboard is in IAP mode, C15 revision will show up as having 04d9:8008 as its USB VendorID and ProductID pair. Where as the C18 revision has 04d9:8009. ",
+    "url": "https://openannepro.github.io/ap2_revisions/#how-do-i-tell",
+    "relUrl": "/ap2_revisions/#how-do-i-tell"
+  },"17": {
+    "doc": "HW Revision and Variations",
+    "title": "HW Revision and Variations",
+    "content": " ",
+    "url": "https://openannepro.github.io/ap2_revisions/",
+    "relUrl": "/ap2_revisions/"
+  }
+}
