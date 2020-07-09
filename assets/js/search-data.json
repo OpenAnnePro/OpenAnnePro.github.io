@@ -13,13 +13,13 @@
   },"2": {
     "doc": "About",
     "title": "Project URLs",
-    "content": ". | QMK Firmware Port The Open-soruce Keyboard Firmware | AnnePro2-Shine Anne Pro 2 Custom LED Firmware | AnnePro2-Tools Anne Pro 2 Flashing Tool | . ",
+    "content": ". | QMK Firmware Port The open source Keyboard Firmware | AnnePro2-Shine Anne Pro 2 Custom LED Firmware | AnnePro2-Tools Anne Pro 2 Flashing Tool | . ",
     "url": "https://openannepro.github.io/about/#project-urls",
     "relUrl": "/about/#project-urls"
   },"3": {
     "doc": "About",
     "title": "Contact",
-    "content": "Feel free to contact me with any question at codetector#codetector.cn . Also I will be writing a blog series about reversing this keyboad, feel free to check it out when it comes out. Codetector’s Blog . ",
+    "content": "Feel free to contact me with any question at codetector#codetector.cn . Also I will be writing a blog series about reversing this keyboard, feel free to check it out when it comes out. Codetector’s Blog . ",
     "url": "https://openannepro.github.io/about/#contact",
     "relUrl": "/about/#contact"
   },"4": {
@@ -43,7 +43,7 @@
   },"7": {
     "doc": "Frequently Asked Questions",
     "title": "FAQs",
-    "content": ". | If I flash this firmware, will I be able to revert to the original Anne Pro firmware later? | . Yes. We use the original Anne Pro 2’s bootloader to load our firmware, so reverting is as easy as puting the keyboard into IAP mode and do an firmware update with ObinsKit. (Note: we have noticed ObinsKit might have trouble restoring when under macOS. But had great success with Windows.) . ",
+    "content": ". | If I flash this firmware, will I be able to revert to the original Anne Pro firmware later? | . Yes. We use the original Anne Pro 2’s bootloader to load our firmware, so reverting is as easy as putting the keyboard into IAP mode and do an firmware update with ObinsKit. (Note: We have noticed ObinsKit might have trouble restoring when under macOS, but have had great success with Windows.) . ",
     "url": "https://openannepro.github.io/faq/#faqs",
     "relUrl": "/faq/#faqs"
   },"8": {
@@ -61,7 +61,7 @@
   },"10": {
     "doc": "Home",
     "title": "Why Custom Firmware",
-    "content": "From my short and limited exprience with the original firmware provided by ObinsLab, I find it to be extremely buggy. One of the most significant problem being compatibility in BIOS. Aside from buggy, I would also like to switch the “Magic FN” from caps lock to other keys. ",
+    "content": "From my short and limited experience with the original firmware provided by ObinsLab, I find it to be extremely buggy. One of the most significant problem being compatibility in BIOS. Aside from buggy, I would also like to switch the “Magic FN” from caps lock to other keys. ",
     "url": "https://openannepro.github.io/#why-custom-firmware",
     "relUrl": "/#why-custom-firmware"
   },"11": {
@@ -73,13 +73,13 @@
   },"12": {
     "doc": "Home",
     "title": "QMK",
-    "content": "QMK is a powerful open-source keyboard firmware that are being used by many open-source keyboards that are on the market today. Most famous for it’s apparence in the Plunk, and ergodox-ez keyboards. Currently we have a fully functional port of the QMK firmware for both the c15 and c18 revision. (If you are unsure which one you have, read below) This includes key matrix function, which is the “most important” part of a keyboard I would say. ",
+    "content": "QMK is a powerful open source keyboard firmware used by many open source keyboards that are on the market today. It is most famous for its appearance in the Plank and ErgoDox EZ keyboards. Currently, we have a fully functional port of the QMK firmware for both the c15 and c18 revision. (If you are unsure which one you have, read below.) This includes key matrix function, which is the “most important” part of a keyboard, I would say. ",
     "url": "https://openannepro.github.io/#qmk",
     "relUrl": "/#qmk"
   },"13": {
     "doc": "Home",
     "title": "AnnePro2-Shine",
-    "content": "Shine is the custom firmware designed to run on the LED micro-controller of the keyboard to control lighting effects. In Obins’ words, this is the Light processor. Currently this project is in its infancy, only very basic features has been tested. It can act as a decent indicator light (e.g. Caps Lock) using the RGB leds. But there is a lot of potential out there, as the firmware is only about 5KB in size right now, and the microcontroller can hold 64/128 KB of code for the c15/c18 revision respectively. ",
+    "content": "Shine is the custom firmware designed to run on the LED micro-controller of the keyboard to control lighting effects. In Obins’ words, this is the Light processor. Currently this project is in its infancy, only very basic features has been tested. It can act as a decent indicator light (e.g. Caps Lock) using the RGB LEDs. But there is a lot of potential out there, as the firmware is only about 5KB in size right now, and the microcontroller can hold 64/128 KB of code for the c15/c18 revision respectively. ",
     "url": "https://openannepro.github.io/#annepro2-shine",
     "relUrl": "/#annepro2-shine"
   },"14": {
@@ -97,7 +97,7 @@
   },"16": {
     "doc": "Build Using Docker",
     "title": "The following build script is provided by @zinosat on the Discord Server",
-    "content": "Save the following into a file named Dockerfile . # docker build -t ap2 . # # docker run --privileged -h ap2 --rm -i -v ${PWD}:/host --user $(id -u) -w /home/dev ap2 bash FROM debian:bullseye MAINTAINER Davide Viti &lt;zinosat@gmail.com&gt; RUN sed -i \\ -e \"s|deb.debian.org|debian.fastweb.it|g\" \\ /etc/apt/sources.list RUN apt-get update &amp;&amp; \\ DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \\ build-essential less git sudo \\ pkg-config libusb-1.0-0-dev cargo gcc-arm-none-eabi libstdc++-arm-none-eabi-newlib RUN adduser --disabled-password --gecos '' dev &amp;&amp; \\ adduser dev sudo &amp;&amp; \\ echo '%sudo ALL=(ALL) NOPASSWD:ALL' &gt;&gt; /etc/sudoers RUN cd /home/dev; sudo -H -u dev git clone https://github.com/OpenAnnePro/AnnePro2-Tools.git &amp;&amp; cd AnnePro2-Tools &amp;&amp; cargo build --release RUN cd /home/dev; sudo -H -u dev git clone https://github.com/OpenAnnePro/qmk_firmware.git annepro-qmk --recursive --depth 1 &amp;&amp; cd annepro-qmk &amp;&amp; make annepro2/c18 RUN cd /home/dev; sudo -H -u dev git clone https://github.com/OpenAnnePro/AnnePro2-Shine.git --recursive --depth 1 &amp;&amp; cd AnnePro2-Shine &amp;&amp; make MODEL=C18 RUN cp /home/dev/AnnePro2-Tools/target/release/annepro2_tools /home/dev/ RUN cp /home/dev/annepro-qmk/.build/annepro2_c18_default.bin /home/dev/ RUN cp /home/dev/AnnePro2-Shine/build/annepro2-shine.bin /home/dev/ ENV TZ /usr/share/zoneinfo/Europe/Rome . and run . docker build -t ap2 . docker run --privileged -h ap2 --rm -i -v ${PWD}:/host --user $(id -u) -w /home/dev ap2 bash . ",
+    "content": "Save the following into a file named Dockerfile . # docker build -t ap2 . # # docker run --privileged -h ap2 --rm -it -v ${PWD}:/host --user $(id -u) -w /home/dev ap2 bash FROM debian:bullseye MAINTAINER Davide Viti &lt;zinosat@gmail.com&gt; RUN sed -i \\ -e \"s|deb.debian.org|debian.fastweb.it|g\" \\ /etc/apt/sources.list RUN apt-get update &amp;&amp; \\ DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \\ build-essential less git sudo \\ pkg-config libusb-1.0-0-dev cargo gcc-arm-none-eabi libstdc++-arm-none-eabi-newlib RUN adduser --disabled-password --gecos '' dev &amp;&amp; \\ adduser dev sudo &amp;&amp; \\ echo '%sudo ALL=(ALL) NOPASSWD:ALL' &gt;&gt; /etc/sudoers RUN cd /home/dev; sudo -H -u dev git clone https://github.com/OpenAnnePro/AnnePro2-Tools.git &amp;&amp; cd AnnePro2-Tools &amp;&amp; cargo build --release RUN cd /home/dev; sudo -H -u dev git clone https://github.com/OpenAnnePro/qmk_firmware.git annepro-qmk --recursive --depth 1 &amp;&amp; cd annepro-qmk &amp;&amp; make annepro2/c18 RUN cd /home/dev; sudo -H -u dev git clone https://github.com/OpenAnnePro/AnnePro2-Shine.git --recursive --depth 1 &amp;&amp; cd AnnePro2-Shine &amp;&amp; make MODEL=C18 RUN cp /home/dev/AnnePro2-Tools/target/release/annepro2_tools /home/dev/ RUN cp /home/dev/annepro-qmk/.build/annepro2_c18_default.bin /home/dev/ RUN cp /home/dev/AnnePro2-Shine/build/annepro2-shine.bin /home/dev/ ENV TZ /usr/share/zoneinfo/Europe/Rome . and run . docker build -t ap2 . docker run --privileged -h ap2 --rm -it -v ${PWD}:/host --user $(id -u) -w /home/dev ap2 bash . ",
     "url": "https://openannepro.github.io/install_docker.html#the-following-build-script-is-provided-by-zinosat-on-the-discord-server",
     "relUrl": "/install_docker.html#the-following-build-script-is-provided-by-zinosat-on-the-discord-server"
   },"17": {
@@ -127,13 +127,13 @@
   },"21": {
     "doc": "How to Install",
     "title": "Get QMK firmware",
-    "content": "Hint: If you are on windows, I recommend completing this step using WSL. YMMV . | Clone our fork of the QMK firmware by using the command below. (Install Git if needed) git clone https://github.com/OpenAnnePro/qmk_firmware.git annepro-qmk --recursive --depth 1 . | Obtain the gcc-arm-none-eabi toolchain so you can build the project. | To compile the firmware type # For C15 Revision make annepro2/c15 # For C18 Revision make annepro2/c18 . This should compelte without any error. And you should be able to see a file named annepro2_c15(18)_default.bin in your directory. | . ",
+    "content": "Hint: If you are on windows, I recommend completing this step using WSL. YMMV . | Clone our fork of the QMK firmware by using the command below. (Install Git if needed) git clone https://github.com/OpenAnnePro/qmk_firmware.git annepro-qmk --recursive --depth 1 . | Obtain the gcc-arm-none-eabi toolchain so you can build the project. | To compile the firmware type # For C15 Revision make annepro2/c15 # For C18 Revision make annepro2/c18 . This should complete without any error. And you should be able to see a file named annepro2_c15(18)_default.bin in your directory. | . ",
     "url": "https://openannepro.github.io/install/#get-qmk-firmware",
     "relUrl": "/install/#get-qmk-firmware"
   },"22": {
     "doc": "How to Install",
     "title": "Flashing the firmware",
-    "content": ". | Put the keyboard into DFU/IAP mode. | Run anndpro2_tools with the firmware you just built. Please subsitute with correct path annepro2_tools annepro2_c15_default.bin . If you have the C18 revision, you will need to add -p 8009 to the argument list in order to specify 0x8009 as the USB product ID. If this reports can’t find device please double check you have the keyboard in IAP mode. We have found out some version of the bootloader only show one interface, which require the use of --loosy argument to use the first interface found on the device with 0x04d9:8009 vid pid pair. | . ",
+    "content": ". | Put the keyboard into DFU/IAP mode. | Run annepro2_tools with the firmware you just built. Please substitute with correct path annepro2_tools annepro2_c15_default.bin . If you have the C18 revision, you will need to add -p 8009 to the argument list in order to specify 0x8009 as the USB product ID. If this reports can’t find device please double check you have the keyboard in IAP mode. We have found out some version of the bootloader only show one interface, which require the use of --loosy argument to use the first interface found on the device with 0x04d9:8009 vid pid pair. | . ",
     "url": "https://openannepro.github.io/install/#flashing-the-firmware",
     "relUrl": "/install/#flashing-the-firmware"
   },"23": {
