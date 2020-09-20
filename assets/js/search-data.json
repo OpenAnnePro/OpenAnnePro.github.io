@@ -139,34 +139,40 @@
   },"23": {
     "doc": "How to Install",
     "title": "Anne Pro 2 Shine",
-    "content": "Building the shine firmware is very simailar to the QMK firmware. | Checkout the repository using git clone https://github.com/OpenAnnePro/annepro2-shine.git --recursive . | Build using # for C15 make # for C18 make MODEL=C18 . | If built without error you can find the binary in build/ directory. You will flash the .bin file using annepro2 tools annepro2_tools -t led path-to-the-bin-file.bin . Note: all the extra argument about C18 revision still applies here . | . Once the tool has completed, you can simply replug the keyboard to activate the firmware. Enjoy! . ",
+    "content": "Building the shine firmware is very simailar to the QMK firmware. | Checkout the repository using git clone https://github.com/OpenAnnePro/annepro2-shine.git --recursive . | Build using # for C15 make C15 # for C18 make C18 # for both make . | If built without error you can find the binary in build/ directory. You will flash the .bin file using annepro2 tools ```bash annepro2_tools -t led build/annepro2-shine-C15.bin ",
     "url": "https://openannepro.github.io/install/#anne-pro-2-shine",
     "relUrl": "/install/#anne-pro-2-shine"
   },"24": {
+    "doc": "How to Install",
+    "title": "for C18",
+    "content": "annepro2_tools -p 8009 -t led build/annepro2-shine-C18.bin . | . Enjoy! . ",
+    "url": "https://openannepro.github.io/install/#for-c18",
+    "relUrl": "/install/#for-c18"
+  },"25": {
     "doc": "How to Install",
     "title": "How to Install",
     "content": " ",
     "url": "https://openannepro.github.io/install/",
     "relUrl": "/install/"
-  },"25": {
+  },"26": {
     "doc": "HW Revision and Variations",
     "title": "C15 vs C18 Hardware Revision",
     "content": " ",
     "url": "https://openannepro.github.io/ap2_revisions/#c15-vs-c18-hardware-revision",
     "relUrl": "/ap2_revisions/#c15-vs-c18-hardware-revision"
-  },"26": {
+  },"27": {
     "doc": "HW Revision and Variations",
     "title": "What’s different",
     "content": "The key differences are the microcontrolleres used. In the C15 revision, two HT32F52342, LQFP48 are used for the matrix and led controllers; however, in the C18 revision they used two HT32F52352, LQFP64. These two are very close in software perspective, but the pin mapping is slightly different. For details of the micro controller themselves, please refer to Holtek’s documentation. But in summary, the HT32F52352 comes with 128K flash and 16K ram, where the HT32F52342 comes with only 64K flash and 8K ram. ",
     "url": "https://openannepro.github.io/ap2_revisions/#whats-different",
     "relUrl": "/ap2_revisions/#whats-different"
-  },"27": {
+  },"28": {
     "doc": "HW Revision and Variations",
     "title": "How do I tell?",
     "content": "There are various indicators as of which revision is which. Case . Flipping you keyboard over, C15 version seems to have “obinslab” engraved in the circle where as C18 has “Anne Pro”. USB ID . If you happen to have an Linux / macOS, you can identify this easily by using lsusb or system info. When the keyboard is in IAP mode, C15 revision will show up as having 04d9:8008 as its USB VendorID and ProductID pair. Where as the C18 revision has 04d9:8009. ",
     "url": "https://openannepro.github.io/ap2_revisions/#how-do-i-tell",
     "relUrl": "/ap2_revisions/#how-do-i-tell"
-  },"28": {
+  },"29": {
     "doc": "HW Revision and Variations",
     "title": "HW Revision and Variations",
     "content": " ",
