@@ -14,4 +14,8 @@ make C15
 make C18
 <span class="c"># for both</span>
 make
-</code></pre></div> </div> </li> <li>If built without error you can find the binary in <code class="language-plaintext highlighter-rouge">build/</code> directory. You will flash the .bin file using annepro2 tools ```bash <h1 id="for-c15"> <a href="#for-c15" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> for C15 </h1> <p>annepro2_tools -t led build/annepro2-shine-C15.bin</p> </li> </ol> <h1 id="for-c18"> <a href="#for-c18" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> for C18 </h1> <p>annepro2_tools -t led -i=[[interface_number]] build/annepro2-shine-C18.bin ``` Enjoy!</p> </div> </div> <div class="search-overlay"></div> </div> </body> </html>
+</code></pre></div> </div> </li> <li>If built without error you can find the binary in <code class="language-plaintext highlighter-rouge">build/</code> directory. You will flash the .bin file using annepro2 tools. <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># for C15</span>
+annepro2_tools <span class="nt">-t</span> led build/annepro2-shine-C15.bin
+<span class="c"># for C18</span>
+annepro2_tools <span class="nt">-t</span> led <span class="nt">-i</span><span class="o">=[[</span>interface_number]] build/annepro2-shine-C18.bin
+</code></pre></div> </div> <p>Enjoy!</p> </li> </ol> </div> </div> <div class="search-overlay"></div> </div> </body> </html>
