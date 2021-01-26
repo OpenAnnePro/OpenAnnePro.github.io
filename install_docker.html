@@ -12,7 +12,7 @@ RUN sed -i \
 
 RUN apt-get update &amp;&amp; \
   DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \
-  build-essential less git sudo \
+  build-essential ca-certificates less git sudo \
   pkg-config libusb-1.0-0-dev cargo gcc-arm-none-eabi libstdc++-arm-none-eabi-newlib
 
 RUN adduser --disabled-password --gecos '' dev &amp;&amp; \
@@ -20,12 +20,14 @@ RUN adduser --disabled-password --gecos '' dev &amp;&amp; \
     echo '%sudo ALL=(ALL) NOPASSWD:ALL' &gt;&gt; /etc/sudoers
 
 RUN cd /home/dev; sudo -H -u dev git clone https://github.com/OpenAnnePro/AnnePro2-Tools.git &amp;&amp; cd AnnePro2-Tools &amp;&amp; cargo build --release
-RUN cd /home/dev; sudo -H -u dev git clone https://github.com/OpenAnnePro/qmk_firmware.git annepro-qmk --recursive --depth 1 &amp;&amp; cd annepro-qmk &amp;&amp; make annepro2/c18
-RUN cd /home/dev; sudo -H -u dev git clone https://github.com/OpenAnnePro/AnnePro2-Shine.git --recursive --depth 1 &amp;&amp; cd AnnePro2-Shine &amp;&amp; make MODEL=C18
+RUN cd /home/dev; sudo -H -u dev git clone https://github.com/OpenAnnePro/qmk_firmware.git annepro-qmk --recursive --depth 1 &amp;&amp; \
+    cd annepro-qmk &amp;&amp; ./util/qmk_install.sh &amp;&amp; make annepro2/c18
+RUN cd /home/dev; sudo -H -u dev git clone https://github.com/OpenAnnePro/AnnePro2-Shine.git --recursive --depth 1 &amp;&amp; \
+cd AnnePro2-Shine &amp;&amp; make C18
 
 RUN cp /home/dev/AnnePro2-Tools/target/release/annepro2_tools /home/dev/
 RUN cp /home/dev/annepro-qmk/.build/annepro2_c18_default.bin /home/dev/
-RUN cp /home/dev/AnnePro2-Shine/build/annepro2-shine.bin /home/dev/
+RUN cp /home/dev/AnnePro2-Shine/build/C18/annepro2-shine-C18.bin /home/dev/
 
 ENV TZ /usr/share/zoneinfo/Europe/Rome
 
